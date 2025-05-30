@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [], 
+    "details": [
+      {
+        "appID": "59GB556D84.com.dalvindigital.jorgejourney",
+        "paths": [
+          "/payment-success",
+          "/payment-cancelled"
+        ] 
+      }
+    ]
+  }
+}
