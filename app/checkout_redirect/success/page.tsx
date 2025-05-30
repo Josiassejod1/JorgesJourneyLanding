@@ -40,7 +40,7 @@ export default function PaymentSuccessPage() {
               If you have any questions or need assistance, please don't hesitate to contact our support team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="https://jorgejourney-67888.firebaseapp.com">
+              <Link href="jorgejourney://stripe-redirect">
                 <Button size="lg" className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white">
                   Start Learning
                 </Button>

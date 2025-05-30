@@ -40,7 +40,7 @@ export default function PaymentCancelledPage() {
               If you'd like to try again, please return to the checkout page. If you continue to experience issues, please contact our support team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="https://jorgejourney-67888.firebaseapp.com"> {/* Assuming you have a /pricing or checkout page */}
+              <Link href="jorgejourney://stripe-redirect"> {/* Assuming you have a /pricing or checkout page */}
                 <Button size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white">
                   Try Again
                 </Button>
