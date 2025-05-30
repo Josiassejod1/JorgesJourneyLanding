@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
+const inter = Inter({ subsets: ['latin'] })
+
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Jorge Journey',
+  description: 'Learn Haitian Creole with Jorge Journey',
 }
 
 export default function RootLayout({
@@ -14,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <meta name="apple-itunes-app" content="app-id=6745862015" />
+      </head>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

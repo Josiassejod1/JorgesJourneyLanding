@@ -1,14 +1,28 @@
 {
-  "applinks": {
-    "apps": [], 
-    "details": [
-      {
-        "appID": "59GB556D84.com.dalvindigital.jorgejourney",
-        "paths": [
-          "/payment-success",
-          "/payment-cancelled"
-        ] 
-      }
-    ]
+    "applinks": {
+      "details": [
+        {
+          "appIDs": [
+            "59GB556D84.com.dalvindigital.jorgejourney"
+          ],
+          "components": [
+            {
+              "/": "*",
+              "comment": "Matches all routes"
+            }
+          ]
+        }
+      ]
+    },
+    "activitycontinuation": {
+      "apps": [
+        "59GB556D84.com.dalvindigital.jorgejourney"
+      ]
+    },
+    "webcredentials": {
+      "apps": [
+        "59GB556D84.com.dalvindigital.jorgejourney"
+      ]
+    }
   }
-}
+  

@@ -2,6 +2,42 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Star, Play, Music, Trophy, BookOpen, Gamepad2, Video, Download, Apple, Smartphone } from "lucide-react"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Jorge's Journey: Learn Haitian Creole with Fun Games",
+  description: "Master Haitian Creole with Jorge's Journey! Engaging games, interactive lessons, music, and videos for all ages. Download now and start your language adventure.",
+  openGraph: {
+    title: "Jorge's Journey: Learn Haitian Creole with Fun Games",
+    description: "Master Haitian Creole with Jorge's Journey! Engaging games, interactive lessons, music, and videos for all ages. Download now and start your language adventure.",
+    url: "https://learnwithjorge.net", // Replace with your actual domain
+    siteName: "Jorge's Journey",
+    images: [
+      {
+        url: "https://learnwithjorge.net/app-icon.png", // Replace with an actual URL to an Open Graph image (1200x630px recommended)
+        width: 1200,
+        height: 630,
+        alt: "Jorge's Journey App - Learn Haitian Creole",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jorge's Journey: Learn Haitian Creole with Fun Games",
+    description: "Master Haitian Creole with Jorge's Journey! Engaging games, interactive lessons, music, and videos for all ages. Download now and start your language adventure.",
+    // siteId: "YourTwitterSiteID", // Optional: Your Twitter site ID
+    // creator: "@YourTwitterHandle", // Optional: Your Twitter handle
+    // creatorId: "YourTwitterCreatorID", // Optional: Your Twitter creator ID
+    images: ["https://learnwithjorge.net/images/app-icon.png"], // Replace with an actual URL to a Twitter card image (e.g., 800x418px)
+  },
+  // Optional: Add more specific SEO tags if needed
+  // keywords: ["Haitian Creole", "Learn Creole", "Language Learning", "Educational Games", "Jorge's Journey"],
+  //alternates: {
+  //  canonical: "https://jorgesjourney.com", // Replace with your actual domain
+  //},
+}
 
 export default function LandingPage() {
   return (
