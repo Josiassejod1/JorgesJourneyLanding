@@ -70,9 +70,13 @@ export default function LandingPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg">
-              <Apple className="mr-2 h-5 w-5" />
-              Download for iOS
+            <Button
+              size="lg"
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg"
+              onClick={() => window.open('https://apps.apple.com/us/app/learn-creole-with-jorge/id6745862015', '_blank')}
+              >
+                <Apple className="mr-2 h-5 w-5" />
+                Download for iOS
             </Button>
             <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 text-lg">
               <Smartphone className="mr-2 h-5 w-5" />
