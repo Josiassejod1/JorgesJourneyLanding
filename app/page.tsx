@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Star, Play, Music, Trophy, BookOpen, Gamepad2, Video, Download, Apple, Smartphone } from "lucide-react"
 import type { Metadata } from 'next'
-import { DownloadButton } from "@/components/DownloadButton"
+import { DownloadButton } from "./components/DownloadButton"
 
 export const metadata: Metadata = {
   title: "Jorge's Journey: Learn Haitian Creole with Fun Games",
