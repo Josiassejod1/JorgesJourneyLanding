@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Star, Play, Music, Trophy, BookOpen, Gamepad2, Video, Download, Apple, Smartphone } from "lucide-react"
 import type { Metadata } from 'next'
 import { DownloadButton } from "./components/DownloadButton"
+import { WatchDemoButton } from "./components/WatchDemoButton"
 
 export const metadata: Metadata = {
   title: "Jorge's Journey: Learn Haitian Creole with Fun Games",
@@ -63,11 +64,8 @@ export default function LandingPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <DownloadButton />
-            <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 text-lg">
-              <Smartphone className="mr-2 h-5 w-5" />
-              Download for Android
-            </Button>
+            <DownloadButton url="https://apps.apple.com/us/app/learn-creole-with-jorge/id6745862015" text="Download for iOS" />
+            <DownloadButton url="https://play.google.com/store/apps/details?id=com.dalvindigital.jorgejourney&pli=1" text="Download for Android" />
           </div>
 
           {/* App Screenshot */}
@@ -224,18 +222,8 @@ export default function LandingPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 text-lg">
-              <Download className="mr-2 h-5 w-5" />
-              Download Free Now
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 text-lg"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
+            <DownloadButton  text="Download for Android" url="https://play.google.com/store/apps/details?id=com.dalvindigital.jorgejourney&pli=1" />
+            <WatchDemoButton />
           </div>
         </div>
       </section>

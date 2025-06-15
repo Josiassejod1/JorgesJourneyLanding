@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Apple } from "lucide-react"
 
-export const DownloadButton = () => {
+export const DownloadButton = ({ url, text }: { url: string, text: string }) => {
   return (
     <Button
       size="lg"
@@ -14,7 +14,7 @@ export const DownloadButton = () => {
       }}
     >
       <Apple className="mr-2 h-5 w-5" />
-      Download for iOS
+      {text}
     </Button>
   );
 }; 
