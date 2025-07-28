@@ -5,11 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Volume2, BookOpen, Calendar } from 'lucide-react';
 import { getWordOfTheDay, HaitianWord } from '@/lib/wordOfTheDay';
+import { speakHaitianCreole, testVoiceQuality } from '@/lib/pronunciation';
 
 export function WordOfTheDay() {
   const [word, setWord] = useState<HaitianWord | null>(null);
   const [loading, setLoading] = useState(true);
   const [showEnglish, setShowEnglish] = useState(false);
+  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [currentVoice, setCurrentVoice] = useState<SpeechSynthesisVoice | null>(null);
+  const [isSpeaking, setIsSpeaking] = useState(false);
 
   const fetchWord = async () => {
     setLoading(true);
@@ -27,12 +31,51 @@ export function WordOfTheDay() {
     fetchWord();
   }, []);
 
+  // Load voices when component mounts
+  useEffect(() => {
+    const loadVoices = () => {
+      const availableVoices = speechSynthesis.getVoices();
+      setVoices(availableVoices);
+      
+      // Test voice quality and log results
+      if (availableVoices.length > 0) {
+        testVoiceQuality(availableVoices);
+      }
+      
+      // If voices aren't loaded yet, wait and try again
+      if (availableVoices.length === 0) {
+        setTimeout(loadVoices, 100);
+      }
+    };
+
+    loadVoices();
+  }, []);
+
   const handlePlayAudio = () => {
-    if (word?.pronunciation) {
-      const utterance = new SpeechSynthesisUtterance(word.creole);
-      utterance.lang = 'ht-HT'; // Haitian Creole language code
-      utterance.rate = 0.8;
-      speechSynthesis.speak(utterance);
+    if (word?.creole && voices.length > 0) {
+      setIsSpeaking(true);
+      // Use enhanced speech synthesis
+      speakHaitianCreole(word.creole, voices);
+      
+      // Update current voice for display
+      const bestVoice = voices.find(v => v.lang.startsWith('fr')) || voices[0];
+      setCurrentVoice(bestVoice);
+      
+      // Reset speaking state after a delay
+      setTimeout(() => setIsSpeaking(false), 3000);
+    } else if (word?.creole) {
+      // Fallback if voices aren't loaded yet
+      console.log('Voices not loaded yet, trying again...');
+      setTimeout(() => {
+        const availableVoices = speechSynthesis.getVoices();
+        if (availableVoices.length > 0) {
+          setIsSpeaking(true);
+          speakHaitianCreole(word.creole, availableVoices);
+          const bestVoice = availableVoices.find(v => v.lang.startsWith('fr')) || availableVoices[0];
+          setCurrentVoice(bestVoice);
+          setTimeout(() => setIsSpeaking(false), 3000);
+        }
+      }, 200);
     }
   };
 
@@ -113,20 +156,31 @@ export function WordOfTheDay() {
             </div>
           )}
 
-          {word.pronunciation && (
+          {/* {word.pronunciation && (
             <Button
               onClick={handlePlayAudio}
               variant="outline"
               className="border-white text-purple-600 hover:bg-white w-full"
+              disabled={isSpeaking}
             >
               <Volume2 className="mr-2 h-4 w-4" />
-              Listen
+              {isSpeaking ? 'Speaking...' : 'Listen'}
+              {currentVoice && (
+                <span className="text-xs ml-2">
+                  ({currentVoice.lang.startsWith('fr') ? 'French' : 'English'} voice)
+                </span>
+              )}
             </Button>
-          )}
+          )} */}
         </div>
 
         <div className="text-xs text-purple-200">
           <p>Come back tomorrow for a new word!</p>
+          {voices.length > 0 && !voices.find(v => v.lang.startsWith('fr')) && (
+            <p className="mt-2 text-yellow-200">
+              💡 Tip: Install French language pack for better pronunciation
+            </p>
+          )}
         </div>
       </CardContent>
     </Card>
