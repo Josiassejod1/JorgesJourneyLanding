@@ -5,6 +5,7 @@ import { Star, Play, Music, Trophy, BookOpen, Gamepad2, Video, Download, Apple, 
 import type { Metadata } from 'next'
 import { DownloadButton } from "./components/DownloadButton"
 import { WatchDemoButton } from "./components/WatchDemoButton"
+import { WordOfTheDay } from "./components/WordOfTheDay"
 
 export const metadata: Metadata = {
   title: "Jorge's Journey: Learn Haitian Creole with Fun Games",
@@ -66,6 +67,11 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <DownloadButton  url="/ios" text="Download for iOS" />
             <DownloadButton url="/android" text="Download for Android" />
+          </div>
+
+          {/* Word of the Day Section */}
+          <div className="mb-12">
+            <WordOfTheDay />
           </div>
 
           {/* App Screenshot */}
