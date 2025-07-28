@@ -64,8 +64,8 @@ export default function LandingPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <DownloadButton url="https://apps.apple.com/us/app/learn-creole-with-jorge/id6745862015" text="Download for iOS" />
-            <DownloadButton url="https://play.google.com/store/apps/details?id=com.dalvindigital.jorgejourney&pli=1" text="Download for Android" />
+            <DownloadButton  url="/ios" text="Download for iOS" />
+            <DownloadButton url="/android" text="Download for Android" />
           </div>
 
           {/* App Screenshot */}
