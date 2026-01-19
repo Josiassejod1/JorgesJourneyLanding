@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
               <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold">J</span>
               </div>
-              <span className="text-2xl font-bold text-gray-800">Jorge's Journey</span>
+              <span className="text-2xl font-bold text-gray-800">Learn Creole with Jorge</span>
             </Link>
             <Link href="/">
               <Button variant="outline">Back to Home</Button>
@@ -52,9 +52,8 @@ export default function PrivacyPolicy() {
             </CardHeader>
             <CardContent className="prose max-w-none">
               <p>
-                Welcome to Jorge's Journey ("we," "our," or "us"). This Privacy Policy explains how we collect, use,
-                disclose, and safeguard your information when you use our mobile application Jorge's Journey - Learn
-                Haitian Creole (the "App"). Please read this privacy policy carefully. If you do not agree with the
+                Welcome to Learn Creole with Jorge ("we," "our," or "us"). This Privacy Policy explains how we collect, use,
+                disclose, and safeguard your information when you use our mobile application Learn Creole with Jorge (the "App"). Please read this privacy policy carefully. If you do not agree with the
                 terms of this privacy policy, please do not access the App.
               </p>
               <p>
@@ -153,7 +152,7 @@ export default function PrivacyPolicy() {
               <div className="bg-orange-100 p-4 rounded-lg mb-4">
                 <p className="font-semibold text-orange-800 mb-2">Important Notice for Parents and Guardians</p>
                 <p className="text-orange-700">
-                  Jorge's Journey is designed to be safe for children. We are committed to protecting children's privacy
+                  Learn Creole with Jorge is designed to be safe for children. We are committed to protecting children's privacy
                   and complying with the Children's Online Privacy Protection Act (COPPA).
                 </p>
               </div>
@@ -366,7 +365,7 @@ export default function PrivacyPolicy() {
           {/* Back to Top */}
           <div className="text-center">
             <Link href="/">
-              <Button className="bg-purple-600 hover:bg-purple-700">Return to Jorge's Journey</Button>
+              <Button className="bg-purple-600 hover:bg-purple-700">Return to Learn Creole with Jorge</Button>
             </Link>
           </div>
         </div>

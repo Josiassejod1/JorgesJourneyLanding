@@ -13,7 +13,7 @@ export default function PaymentCancelledPage() {
               <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold">J</span>
               </div>
-              <span className="text-2xl font-bold text-gray-800">Jorge's Journey</span>
+              <span className="text-2xl font-bold text-gray-800">Learn Creole with Jorge</span>
             </Link>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function PaymentCancelledPage() {
 
       {/* Footer (Optional - can be a shared component later) */}
       <footer className="py-8 text-center text-gray-500 text-sm">
-        <p>&copy; {new Date().getFullYear()} Jorge's Journey. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Learn Creole with Jorge. All rights reserved.</p>
         <p>
           <Link href="/privacy" className="hover:text-purple-600">Privacy Policy</Link>
         </p>

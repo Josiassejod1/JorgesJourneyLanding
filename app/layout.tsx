@@ -6,8 +6,18 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Jorge Journey',
-  description: 'Learn Haitian Creole with Jorge Journey',
+  title: 'Learn Creole with Jorge',
+  description: 'Learn Haitian Creole with Learn Creole with Jorge',
+  icons: {
+    icon: [
+      { url: '/images/app-icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/app-icon.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/app-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/images/app-icon.png',
+  },
 }
 
 export default function RootLayout({

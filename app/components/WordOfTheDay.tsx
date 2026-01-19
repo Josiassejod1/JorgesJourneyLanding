@@ -118,7 +118,7 @@ export function WordOfTheDay() {
   }
 
   return (
-    <Card className="w-full max-w-md mx-auto bg-red-600 text-white shadow-xl">
+    <Card className="w-full max-w-2xl mx-auto bg-red-600 text-white shadow-xl">
       <CardHeader className="text-center">
         <CardTitle className="text-xl flex items-center justify-center">
           <BookOpen className="mr-2 h-5 w-5" />
@@ -129,30 +129,30 @@ export function WordOfTheDay() {
           {getTodayFormatted()}
         </div>
       </CardHeader>
-      <CardContent className="text-center space-y-4">
-        <div className="space-y-2">
-          <h3 className="text-3xl font-bold">{word.creole}</h3>
+      <CardContent className="text-center space-y-6 p-8">
+        <div className="space-y-3">
+          <h3 className="text-5xl md:text-6xl font-bold">{word.creole}</h3>
           {word.pronunciation && (
-            <p className="text-lg text-red-100 italic">[{word.pronunciation}]</p>
+            <p className="text-2xl md:text-3xl text-red-100 italic">[{word.pronunciation}]</p>
           )}
           {word.category && (
-            <span className="inline-block bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">
+            <span className="inline-block bg-white bg-opacity-20 px-4 py-2 rounded-full text-base md:text-lg">
               {word.category}
             </span>
           )}
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           <Button
             onClick={() => setShowEnglish(!showEnglish)}
-            className="bg-white text-red-600 hover:bg-gray-100 w-full"
+            className="bg-white text-red-600 hover:bg-gray-100 w-full text-lg py-6"
           >
             {showEnglish ? 'Hide' : 'Show'} English Translation
           </Button>
 
           {showEnglish && (
-            <div className="bg-white bg-opacity-20 rounded-lg p-4">
-              <p className="text-lg font-semibold">{word.english}</p>
+            <div className="bg-white bg-opacity-20 rounded-lg p-6">
+              <p className="text-2xl md:text-3xl font-semibold">{word.english}</p>
             </div>
           )}
 
