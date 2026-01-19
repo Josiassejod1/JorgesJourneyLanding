@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, Play, Music, Trophy, BookOpen, Gamepad2, Video, Download, Apple, Smartphone } from "lucide-react"
+import { Heart, Users, Plane, Sparkles, Apple, Smartphone, MessageCircle } from "lucide-react"
 import type { Metadata } from 'next'
 import { DownloadButton } from "./components/DownloadButton"
 import { WatchDemoButton } from "./components/WatchDemoButton"
@@ -10,6 +10,23 @@ import { WordOfTheDay } from "./components/WordOfTheDay"
 export const metadata: Metadata = {
   title: "Jorge's Journey: Learn Haitian Creole with Fun Games",
   description: "Master Haitian Creole with Jorge's Journey! Engaging games, interactive lessons, music, and videos for all ages. Download now and start your language adventure.",
+  keywords: [
+    "creole to english",
+    "english to creole haitian",
+    "creole haitian to english",
+    "english to haitian",
+    "english to creole",
+    "english to haitian creole",
+    "haitian to english",
+    "haitian creole to english",
+    "haitian creole translate",
+    "translate",
+    "haitian creole",
+    "learn haitian creole",
+    "haitian creole learning app",
+    "creole translation",
+    "haitian language learning"
+  ],
   openGraph: {
     title: "Jorge's Journey: Learn Haitian Creole with Fun Games",
     description: "Master Haitian Creole with Jorge's Journey! Engaging games, interactive lessons, music, and videos for all ages. Download now and start your language adventure.",
@@ -36,7 +53,7 @@ export const metadata: Metadata = {
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-300 to-yellow-300">
+    <div className="min-h-screen bg-[#F5F5DC]">
       {/* Header */}
       <header className="container mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
@@ -48,194 +65,216 @@ export default function LandingPage() {
               height={50}
               className="rounded-xl"
             />
-            <span className="text-2xl font-bold text-white">Jorge's Journey</span>
+            <span className="text-2xl font-bold text-gray-800">Jorge's Journey</span>
           </div>
-          <Button className="bg-white text-purple-600 hover:bg-gray-100">Download Now</Button>
+          <Button className="bg-purple-600 text-white hover:bg-purple-700">Download Now</Button>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">LEARN HAITIAN CREOLE</h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-purple-800 mb-8">Through Fun & Interactive Games!</h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Join Jorge on an exciting journey to master Haitian Creole through engaging games, interactive lessons,
-            music, and videos designed for learners of all ages.
+      <section className="container mx-auto px-4 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left side - Text content */}
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Learn Haitian Creole
+              </h1>
+              <h2 className="text-3xl md:text-4xl font-bold text-purple-700 mb-6">
+                Connect with What Matters Most
+              </h2>
+              <p className="text-xl text-gray-700 mb-8">
+                Whether you're connecting with family, your partner, preparing for a trip, or simply enjoying the joy of learning—Jorge's Journey makes mastering Haitian Creole fun and meaningful.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <DownloadButton url="/ios" text="Download for iOS" />
+                <DownloadButton url="/android" text="Download for Android" />
+              </div>
+
+              {/* Word of the Day Section */}
+              <div className="mb-8">
+                <WordOfTheDay />
+              </div>
+            </div>
+
+            {/* Right side - Carousel Image */}
+            <div className="relative">
+              <div className="relative w-full aspect-square max-w-lg mx-auto">
+                <Image
+                  src="/images/carousel_3.png"
+                  alt="People communicating in Haitian Creole"
+                  fill
+                  className="object-contain rounded-2xl"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Learn Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
+            Why People Learn Haitian Creole
+          </h2>
+          <p className="text-xl text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+            Discover the meaningful reasons that inspire thousands to start their language journey
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <DownloadButton  url="/ios" text="Download for iOS" />
-            <DownloadButton url="/android" text="Download for Android" />
-          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Communicate with Family */}
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-200">
+              <CardContent className="space-y-4">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="p-4 bg-purple-100 rounded-full">
+                    <Users className="h-8 w-8 text-purple-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">Connect with Family</h3>
+                </div>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Bridge the language gap and deepen your relationships. Speak Haitian Creole with grandparents, cousins, and extended family members to create stronger bonds and preserve cultural connections.
+                </p>
+              </CardContent>
+            </Card>
 
-          {/* Word of the Day Section */}
-          <div className="mb-12">
-            <WordOfTheDay />
-          </div>
+            {/* Partner is Haitian */}
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-200">
+              <CardContent className="space-y-4">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="p-4 bg-pink-100 rounded-full">
+                    <Heart className="h-8 w-8 text-pink-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">Your Partner is Haitian</h3>
+                </div>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Show your love and commitment by learning their language. Communicate more deeply, understand their culture better, and connect with their family and community in a meaningful way.
+                </p>
+              </CardContent>
+            </Card>
 
-          {/* App Screenshot */}
-          <div className="relative max-w-md mx-auto">
-            <Image
-              src="/images/dashboard.png"
-              alt="Jorge's Journey App Dashboard"
-              width={400}
-              height={600}
-              className="rounded-3xl shadow-2xl"
-            />
+            {/* Trip Coming Up */}
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-200">
+              <CardContent className="space-y-4">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="p-4 bg-blue-100 rounded-full">
+                    <Plane className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">A Trip Coming Up</h3>
+                </div>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Prepare for your journey to Haiti or Haitian communities. Learn essential phrases, navigate confidently, and engage authentically with locals. Make your travel experience richer and more meaningful.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Learning is Fun */}
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-200">
+              <CardContent className="space-y-4">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="p-4 bg-yellow-100 rounded-full">
+                    <Sparkles className="h-8 w-8 text-yellow-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">Learning is Fun</h3>
+                </div>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Discover the joy of learning a new language! Challenge yourself, expand your mind, and experience the satisfaction of mastering Haitian Creole through interactive games and engaging lessons.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="bg-white py-20">
+      <section className="bg-[#F5F5DC] py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
-            Everything You Need to Learn Haitian Creole
+            How Jorge's Journey Helps You Learn
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Interactive Games */}
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+            <Card className="text-center p-6 bg-white hover:shadow-lg transition-shadow">
               <CardContent className="space-y-4">
-                <div className="relative mx-auto w-48 h-64">
-                  <Image src="/images/counting-game.png" alt="Counting Game" fill className="object-cover rounded-lg" />
+                <div className="relative mx-auto w-full h-48 mb-4">
+                  <Image src="/images/counting-game.png" alt="Interactive Games" fill className="object-cover rounded-lg" />
                 </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <Gamepad2 className="h-6 w-6 text-purple-600" />
-                  <h3 className="text-xl font-bold">Interactive Games</h3>
-                </div>
+                <h3 className="text-xl font-bold text-gray-800">Interactive Games</h3>
                 <p className="text-gray-600">
-                  Learn numbers, letters, and vocabulary through fun, engaging games that make learning feel like play.
+                  Learn through fun, engaging games that make mastering Haitian Creole feel like play.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Alphabet Learning */}
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+            {/* Music & Videos */}
+            <Card className="text-center p-6 bg-white hover:shadow-lg transition-shadow">
               <CardContent className="space-y-4">
-                <div className="relative mx-auto w-48 h-64">
-                  <Image src="/images/alphabet.png" alt="Alphabet Learning" fill className="object-cover rounded-lg" />
+                <div className="relative mx-auto w-full h-48 mb-4">
+                  <Image src="/images/music.png" alt="Music Library" fill className="object-cover rounded-lg" />
                 </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <BookOpen className="h-6 w-6 text-purple-600" />
-                  <h3 className="text-xl font-bold">Alphabet Mastery</h3>
-                </div>
+                <h3 className="text-xl font-bold text-gray-800">Music & Videos</h3>
                 <p className="text-gray-600">
-                  Master the Haitian Creole alphabet with interactive pronunciation guides and example words.
+                  Immerse yourself in Haitian culture through traditional songs, videos, and audio lessons.
                 </p>
               </CardContent>
             </Card>
 
             {/* Achievement System */}
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+            <Card className="text-center p-6 bg-white hover:shadow-lg transition-shadow">
               <CardContent className="space-y-4">
-                <div className="relative mx-auto w-48 h-64">
+                <div className="relative mx-auto w-full h-48 mb-4">
                   <Image src="/images/badges.png" alt="Achievement Badges" fill className="object-cover rounded-lg" />
                 </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <Trophy className="h-6 w-6 text-purple-600" />
-                  <h3 className="text-xl font-bold">Earn Badges</h3>
-                </div>
+                <h3 className="text-xl font-bold text-gray-800">Track Progress</h3>
                 <p className="text-gray-600">
-                  Stay motivated with achievement badges, practice streaks, and progress tracking.
+                  Stay motivated with badges, streaks, and progress tracking as you build your skills.
                 </p>
               </CardContent>
             </Card>
-
-            {/* Interactive Videos */}
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="space-y-4">
-                <div className="relative mx-auto w-48 h-64">
-                  <Image src="/images/videos.png" alt="Learning Videos" fill className="object-cover rounded-lg" />
-                </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <Video className="h-6 w-6 text-purple-600" />
-                  <h3 className="text-xl font-bold">Educational Videos</h3>
-                </div>
-                <p className="text-gray-600">
-                  Watch engaging educational videos including number songs and alphabet lessons.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Music Library */}
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="space-y-4">
-                <div className="relative mx-auto w-48 h-64">
-                  <Image src="/images/music.png" alt="Music Library" fill className="object-cover rounded-lg" />
-                </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <Music className="h-6 w-6 text-purple-600" />
-                  <h3 className="text-xl font-bold">Music Library</h3>
-                </div>
-                <p className="text-gray-600">
-                  Learn through traditional Haitian songs and nursery rhymes with audio playback and translations.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Comprehensive Lessons */}
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="space-y-4">
-                <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg p-8 h-64 flex items-center justify-center">
-                  <BookOpen className="h-24 w-24 text-white" />
-                </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <Star className="h-6 w-6 text-purple-600" />
-                  <h3 className="text-xl font-bold">Structured Lessons</h3>
-                </div>
-                <p className="text-gray-600">
-                  Follow a carefully designed curriculum that builds your Haitian Creole skills step by step.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="bg-purple-600 py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center text-white">
-            <div>
-              <div className="text-4xl font-bold mb-2">10+</div>
-              <div className="text-lg">Interactive Games</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">50+</div>
-              <div className="text-lg">Vocabulary Words</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">15+</div>
-              <div className="text-lg">Achievement Badges</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">20+</div>
-              <div className="text-lg">Songs & Videos</div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-green-400 to-blue-500 py-20">
+      <section className="bg-gradient-to-r from-purple-600 to-pink-600 py-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Start Your Haitian Creole Journey Today!</h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Join thousands of learners who are discovering the beauty of Haitian Creole through Jorge's interactive and
-            fun learning experience.
-          </p>
+          <div className="max-w-3xl mx-auto">
+            <MessageCircle className="h-16 w-16 text-white mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Start Connecting Today
+            </h2>
+            <p className="text-xl text-white mb-8 leading-relaxed">
+              Whether you're reconnecting with family, deepening your relationship, preparing for travel, or simply enjoying the journey of learning—Jorge's Journey makes Haitian Creole accessible, fun, and meaningful.
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <DownloadButton  text="Download for Android" url="https://play.google.com/store/apps/details?id=com.dalvindigital.jorgejourney&pli=1" />
-            <WatchDemoButton />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <DownloadButton text="Download for Android" url="https://play.google.com/store/apps/details?id=com.dalvindigital.jorgejourney&pli=1" />
+              <WatchDemoButton />
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mt-12 text-white">
+              <div>
+                <div className="text-3xl font-bold mb-2">10+</div>
+                <div className="text-sm opacity-90">Interactive Games</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">50+</div>
+                <div className="text-sm opacity-90">Vocabulary Words</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">20+</div>
+                <div className="text-sm opacity-90">Songs & Videos</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -243,17 +282,16 @@ export default function LandingPage() {
                 <Image src="/images/app-icon.png" alt="Jorge's Journey" width={40} height={40} className="rounded-lg" />
                 <span className="text-xl font-bold">Jorge's Journey</span>
               </div>
-              <p className="text-gray-400">Making Haitian Creole learning fun and accessible for everyone.</p>
+              <p className="text-gray-400">Connecting hearts through Haitian Creole. Making language learning meaningful, fun, and accessible for everyone.</p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4">Features</h3>
+              <h3 className="text-lg font-semibold mb-4">Why Learn</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>Interactive Games</li>
-                <li>Alphabet Learning</li>
-                <li>Music Library</li>
-                <li>Educational Videos</li>
-                <li>Achievement System</li>
+                <li>Connect with Family</li>
+                <li>Your Partner is Haitian</li>
+                <li>Upcoming Trip</li>
+                <li>Learning is Fun</li>
               </ul>
             </div>
 

@@ -8,7 +8,7 @@ export const DownloadButton = ({ url, text }: { url: string, text: string }) => 
     <Button
       size="lg"
       type="button"
-      className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg"
+      className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg"
       onClick={() => {
         window.open(url, '_blank', 'noopener,noreferrer');
       }}

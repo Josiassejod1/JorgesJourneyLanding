@@ -91,7 +91,7 @@ export function WordOfTheDay() {
 
   if (loading) {
     return (
-      <Card className="w-full max-w-md mx-auto bg-gradient-to-br from-purple-500 to-pink-500 text-white">
+      <Card className="w-full max-w-md mx-auto bg-red-600 text-white">
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Word of the Day</CardTitle>
         </CardHeader>
@@ -105,7 +105,7 @@ export function WordOfTheDay() {
 
   if (!word) {
     return (
-      <Card className="w-full max-w-md mx-auto bg-gradient-to-br from-red-500 to-pink-500 text-white">
+      <Card className="w-full max-w-md mx-auto bg-red-600 text-white">
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Word of the Day</CardTitle>
         </CardHeader>
@@ -118,13 +118,13 @@ export function WordOfTheDay() {
   }
 
   return (
-    <Card className="w-full max-w-md mx-auto bg-gradient-to-br from-purple-500 to-pink-500 text-white shadow-xl">
+    <Card className="w-full max-w-md mx-auto bg-red-600 text-white shadow-xl">
       <CardHeader className="text-center">
         <CardTitle className="text-xl flex items-center justify-center">
           <BookOpen className="mr-2 h-5 w-5" />
           Word of the Day
         </CardTitle>
-        <div className="flex items-center justify-center text-sm text-purple-200">
+        <div className="flex items-center justify-center text-sm text-red-100">
           <Calendar className="mr-1 h-4 w-4" />
           {getTodayFormatted()}
         </div>
@@ -133,7 +133,7 @@ export function WordOfTheDay() {
         <div className="space-y-2">
           <h3 className="text-3xl font-bold">{word.creole}</h3>
           {word.pronunciation && (
-            <p className="text-lg text-purple-200 italic">[{word.pronunciation}]</p>
+            <p className="text-lg text-red-100 italic">[{word.pronunciation}]</p>
           )}
           {word.category && (
             <span className="inline-block bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">
@@ -145,7 +145,7 @@ export function WordOfTheDay() {
         <div className="space-y-3">
           <Button
             onClick={() => setShowEnglish(!showEnglish)}
-            className="bg-white text-purple-600 hover:bg-gray-100 w-full"
+            className="bg-white text-red-600 hover:bg-gray-100 w-full"
           >
             {showEnglish ? 'Hide' : 'Show'} English Translation
           </Button>
@@ -174,7 +174,7 @@ export function WordOfTheDay() {
           )} */}
         </div>
 
-        <div className="text-xs text-purple-200">
+        <div className="text-xs text-red-100">
           <p>Come back tomorrow for a new word!</p>
           {voices.length > 0 && !voices.find(v => v.lang.startsWith('fr')) && (
             <p className="mt-2 text-yellow-200">
