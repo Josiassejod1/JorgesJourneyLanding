@@ -78,7 +78,23 @@ export default function LandingPage() {
             />
             <span className="text-2xl font-bold text-gray-800">Learn Creole with Jorge</span>
           </div>
-          <Button className="bg-purple-600 text-white hover:bg-purple-700">Download Now</Button>
+          <div className="flex items-center gap-4">
+            <a 
+              href="https://www.producthunt.com/products/learn-creole-with-jorge?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-learn-creole-with-jorge" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img 
+                alt="Learn Creole with Jorge - Learning Haitian Creole Made Easy | Product Hunt" 
+                width="250" 
+                height="54" 
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1068161&theme=dark&t=1769405960698"
+                className="h-[54px] w-auto"
+              />
+            </a>
+            <Button className="bg-purple-600 text-white hover:bg-purple-700">Download Now</Button>
+          </div>
         </nav>
       </header>
 
@@ -280,6 +296,31 @@ export default function LandingPage() {
           
           {/* Note: To add more screenshots, simply add them to /public/images/latest-app-screenshots/ 
               and update the array above with the new numbers */}
+        </div>
+      </section>
+
+      {/* Music Section */}
+      <section className="bg-[#F5F5DC] py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
+            Listen to Our Song
+          </h2>
+          <p className="text-xl text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+            Experience Haitian Creole through music
+          </p>
+          <div className="max-w-2xl mx-auto">
+            <iframe
+              data-testid="embed-iframe"
+              style={{ borderRadius: '12px' }}
+              src="https://open.spotify.com/embed/track/63wVohZ18Tz5g9hlmw9LBa?utm_source=generator&theme=0&autoplay=1"
+              width="100%"
+              height="352"
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 

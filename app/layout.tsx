@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description: 'Learn Haitian Creole with Learn Creole with Jorge',
   icons: {
     icon: [
+      { url: '/images/app-icon.png', sizes: 'any' },
       { url: '/images/app-icon.png', sizes: '32x32', type: 'image/png' },
       { url: '/images/app-icon.png', sizes: '192x192', type: 'image/png' },
     ],
@@ -17,6 +18,12 @@ export const metadata: Metadata = {
       { url: '/images/app-icon.png', sizes: '180x180', type: 'image/png' },
     ],
     shortcut: '/images/app-icon.png',
+    other: [
+      {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/images/app-icon.png',
+      },
+    ],
   },
 }
 
@@ -29,6 +36,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="apple-itunes-app" content="app-id=6745862015" />
+        <link rel="icon" href="/images/app-icon.png" type="image/png" />
+        <link rel="shortcut icon" href="/images/app-icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/app-icon.png" />
       </head>
       <body className={inter.className}>
         {children}
