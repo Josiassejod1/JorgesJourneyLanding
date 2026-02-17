@@ -329,7 +329,14 @@ function BooksContent() {
             <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
               <div className="md:flex">
                 <div className="md:w-1/3 bg-gradient-to-br from-purple-400 via-pink-300 to-yellow-300 p-8 flex items-center justify-center">
-                  <BookOpen className="h-32 w-32 text-white opacity-80" />
+                  <div className="relative w-full aspect-[3/4] max-w-[280px] mx-auto">
+                    <Image
+                      src="/images/books/1.png"
+                      alt={`${book.title} - Book Cover`}
+                      fill
+                      className="object-contain rounded-lg shadow-xl"
+                    />
+                  </div>
                 </div>
                 <div className="md:w-2/3 p-8">
                   <CardHeader>
@@ -412,6 +419,29 @@ function BooksContent() {
               </div>
             </Card>
           ))}
+
+          {/* Book Pages Gallery */}
+          <div className="mt-12">
+            <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
+              Preview Pages from the Book
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              {[14, 20].map((pageNum) => (
+                <div
+                  key={pageNum}
+                  className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group bg-gray-100"
+                >
+                  <Image
+                    src={`/images/books/${pageNum}.png`}
+                    alt={`Book page ${pageNum} from A Mile In My Shoes`}
+                    fill
+                    className="object-contain group-hover:brightness-110 transition-all duration-300"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
